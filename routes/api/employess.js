@@ -9,18 +9,30 @@ router.route('/')
         res.json(data.employees);
     })
     .post((req, res) => {
-        res.json({firstname, lastname} = req.body);
+        const {firstname, lastname} = req.body;
+        const id = data.employees.length + 1
+        data.employees.push({id ,firstname, lastname});
+        res.send('ok');
     })
     .put((req, res) => {
-        res.json({firstname, lastname} = req.body);
-    })
-    .delete((req, res) => {
-        res.json({"id": req.body.id})
+        const {id, firstname, lastname} = req.body;
+        data.employees.map((item) => {
+            if(item.id == id){
+                item.firstname = firstname;
+                item.lastname = lastname;
+        }});
+        res.send('ok');
     });
 
 router.route('/:id')
     .get((req, res) => {
-        res.json({"id": req.params.id});
+        const item = data.employees.filter((item) => item.id == req.params.id);
+        res.json(item);
+    })
+    .delete((req, res) => {
+        const item = data.employees.filter((item) => item.id != req.params.id);
+        data.employees = item;
+        res.send(data.employees);
     });
 
 module.exports = router;
