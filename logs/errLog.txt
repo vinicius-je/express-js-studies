@@ -7,3 +7,5 @@
 20220523	18:21:37	836ce5b3-6675-4c46-b00a-1dc172ea602e	Error: Not allowed by CORS
 20220527	14:21:03	f7983292-78c5-4c42-8fa4-738eb33e5e0e	ReferenceError: ok is not defined
 20220527	14:35:17	1007cca8-31b2-4986-86a3-08be98182bb7	TypeError: req.send is not a function
+20220530	20:51:08	221108d9-39e9-4493-8001-f65d35f9fe60	Error: secretOrPrivateKey must have a value
+20220530	20:52:08	dcb1ac07-851a-4d0f-be0c-2ed5fcba3fd0	Error: secretOrPrivateKey must have a value
